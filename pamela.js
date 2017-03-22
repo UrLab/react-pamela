@@ -1,6 +1,7 @@
 import React from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon } from 'native-base';
+import { ListItem } from 'native-base';
 import Expo from 'expo';
 
 function getSpaceApi() {
@@ -15,7 +16,11 @@ function getSpaceApi() {
 class User extends React.Component {
   render() {
     return (
-      <Text>{this.props.name}</Text>
+      <ListItem>
+        <Text>
+          {this.props.name}
+        </Text>
+      </ListItem>
     );
   }
 }
@@ -41,11 +46,13 @@ export default class Pamela extends React.Component {
 
   render() {
     return (
-      <View>
-        {this.state.users.map((user) => {
-          return <User name={user} key={user}/>;
-        })}
-      </View>
+      <Container>
+        <Content>
+          {this.state.users.map((user) => {
+            return <User name={user} key={user}/>;
+          })}
+        </Content>
+      </Container>
     );
   }
 }

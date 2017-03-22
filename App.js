@@ -25,19 +25,19 @@ export default class App extends React.Component {
     }
 
     return (
-      <View style={styles.container}>
+      <Container style={{marginVertical: 25}}>
+        <Header>
+          <Left>
+            <Icon active name='person' />
+          </Left>
+          <Body>
+            <Title>
+              Pamela
+            </Title>
+          </Body>
+        </Header>
         <Pamela/>
-      </View>
+      </Container>
     );
   }
 }
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
